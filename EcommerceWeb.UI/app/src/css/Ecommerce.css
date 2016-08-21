@@ -1,0 +1,22 @@
+.rightAlignNav {
+    float: right;
+}
+
+.searchBar {
+    position: fixed;
+    margin-top: 10px;
+    width: 600px;
+}
+.rightAlignMargin {
+    margin-right: 50px;
+}
+
+.menuItems {
+    color: #ffffff;
+    background-color: #080808;
+    display: inline-block;
+    padding: 14px 10px;
+}
+
+
+

@@ -1,5 +1,5 @@
 {
-  "name": "EcommerceWeb.UI",
+  "name": "ecommerceWeb",
   "homepage": "https://github.com/SheikMBasha/EcommerceWeb",
   "authors": [
     "SheikMBasha <basha.mjcet@gmail.com>"
@@ -7,7 +7,6 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
