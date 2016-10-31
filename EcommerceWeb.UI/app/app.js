@@ -9,5 +9,10 @@ app.config(function($routeProvider){
     $routeProvider.
         when('/home',
             {templateUrl: 'app/src/js/templates/home.html'})
+        .when('/login',
+        {
+            controller: 'loginCtrl',
+            templateUrl:'app/src/js/templates/login/login.html'
+        })
         .otherwise({redirectTo: '/home'});
 });
