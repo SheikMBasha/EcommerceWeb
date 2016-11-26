@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app/src/css/Ecommerce.css" />
 </head>
-<body>
+<body ng-controller="ApplicationController">
 
 
 <nav class="navbar navbar-inverse">
@@ -44,6 +44,7 @@
                 <li><a href="#"><i class="fa fa-bell"></i></a></li>
                <li><a href="#">SignUp</a></li>
                 <li><a href="#login">Login</a></li>
+                <li><a href="#">Hi Test</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -69,9 +70,18 @@
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"/>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bower_components/ngstorage/ngStorage.js"></script>
 
 
     <script type="text/javascript" src="app/app.js"></script>
+
+    <script type="text/javascript" src="app/src/js/controllers/applicatonCtrl.js"></script>
+
     <script type="text/javascript" src="app/src/js/controllers/loginCtrl.js"></script>
+    <script type="text/javascript" src="app/src/js/factories/AuthFactory.js"></script>
+    <script type="text/javascript" src="app/src/js/factories/authUserData.js"></script>
+
+    <script type="text/javascript" src="app/src/js/factories/storageFactory.js"></script>
+
 </body>
 </html>

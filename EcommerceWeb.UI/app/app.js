@@ -3,7 +3,10 @@
  */
 //angular.module("eCommerceApp", ['ngRoute']);
 
-var app = angular.module('ecommerceApp',['ngRoute']);
+var Storage = angular.module('StorageModule', []);
+
+var app = angular.module('ecommerceApp',['ngRoute','ngStorage','StorageModule']);
+
 
 app.config(function($routeProvider){
     $routeProvider.
@@ -16,3 +19,12 @@ app.config(function($routeProvider){
         })
         .otherwise({redirectTo: '/home'});
 });
+
+app.run(['$rootScope','authUserData',function($rootScope,authUserData){
+   $rootScope.$on('$routeChangeStart', function(event, current, next) {
+       if(authUserData.authenticationDetails.isAuthenticated) {
+           window.alert('Authentication');
+       }
+        window.alert('Route Changed');
+   });
+}]);

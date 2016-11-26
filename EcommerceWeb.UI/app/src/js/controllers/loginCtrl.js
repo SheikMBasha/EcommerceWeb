@@ -4,11 +4,19 @@
 
 var app = angular.module('ecommerceApp');
 
-app.controller('loginCtrl',['$scope', function($scope){
-    $scope.text = "Login Controller";
+app.controller('loginCtrl',['$rootScope','$scope', '$http', 'AuthFactory','$location','StorageService',
+                        function($rootScope,$scope, $http, AuthFactory, $location,StorageService){
 
     $scope.login = function(credentials){
-        console.log(credentials.username);
-        console.log(credentials.password);
+        var data = { username : credentials.username, password : credentials.password };
+        AuthFactory.login(data).then(function(success){
+            console.log('Success');
+        }, function(error){
+            console.log('Error');
+            //$location.path(/login);
+        });
+
+
+
     };
 }]);
