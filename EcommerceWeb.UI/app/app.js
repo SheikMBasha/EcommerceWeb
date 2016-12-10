@@ -15,14 +15,31 @@ app.config(function($stateProvider, $urlRouterProvider){
         $stateProvider.
             state('home', {
                 url: '/home',
-                templateUrl: 'app/src/js/templates/home.html'
+                templateUrl: 'app/src/js/templates/home.html',
+                params: {
+                    AuthenticationRequired: true
+                }
             })
             .state('login', {
                 url: '/login',
                 templateUrl: 'app/src/js/templates/login/login.html',
-                controller: 'loginCtrl'
+                controller: 'loginCtrl',
+                params: {
+                    AuthenticationRequired: false
+                }
             })
 });
+
+app.run(['$rootScope','$state','authUserData', function($rootScope,$state,authUserData){
+    $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams){
+        var routeAuthentication = toState.params.AuthenticationRequired;
+        if(routeAuthentication) {
+            evt.preventDefault();
+            $state.go('login');
+        }
+    });
+}]);
+
 
 
 //app.config(function($routeProvider){
