@@ -9,8 +9,9 @@ app.controller('loginCtrl',['$rootScope','$scope', '$http', 'AuthFactory','$loca
 
     $scope.login = function(credentials){
         var data = { username : credentials.username, password : credentials.password };
-        AuthFactory.login(data).then(function(success){
+        AuthFactory.login(data).then(function(data){
             console.log('Success');
+            $scope.$emit('LoginSuccess', data);
         }, function(error){
             console.log('Error');
             //$location.path(/login);

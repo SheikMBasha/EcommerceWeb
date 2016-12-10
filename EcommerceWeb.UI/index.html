@@ -44,7 +44,7 @@
                 <li><a href="#" ui-sref="#"><i class="fa fa-bell"></i></a></li>
                <li><a href="#">SignUp</a></li>
                 <li><a href="#login" ui-sref="login">Login</a></li>
-                <li><a>{{user.isAuthenticated}}</a></li>
+                <li ng-hide="!user.isAuthenticated"><a> Hi {{user.userData.FirstName}}</a></li>
                 <!--<li ng-show="{{user.isAuthenticated}}"><a>Hi {{user.FirstName}}</a></li>-->
             </ul>
         </div><!-- /.navbar-collapse -->

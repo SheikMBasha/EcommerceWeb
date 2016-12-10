@@ -21,7 +21,7 @@ app.factory('AuthFactory', ['$q','$http','authUserData', function($q,$http,authU
             }). then( function(result){
                 authUserData.authenticationDetails.isAuthenticated = true;
                 authUserData.authenticationDetails.userData = result.data;
-                deferred.resolve(null);
+                deferred.resolve(authUserData);
             }, function(error){
                 authUserData.authenticationDetails.isAuthenticated = false;
                 authUserData.authenticationDetails.userData = {};
