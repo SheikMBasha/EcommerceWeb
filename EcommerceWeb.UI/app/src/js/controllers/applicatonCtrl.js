@@ -7,10 +7,13 @@ var app = angular.module('ecommerceApp');
 
 app.controller('ApplicationController', ['$scope', 'authUserData',function($scope, authUserData){
 
-    $scope.user = {};
+    $scope.user = {
+        isAuthenticated : false
+    };
 
-    var userData = authUserData.authenticationDetails.userData
-    if (userData.FirstName !== undefined ) {
+    var userData = authUserData.authenticationDetails.userData;
+    if (authUserData.authenticationDetails.isAuthenticated && userData.FirstName !== undefined  ) {
+        $scope.user.isAuthenticated = true;
         $scope.user.FirstName = userData.FirstName;
     }
 
